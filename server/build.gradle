@@ -385,6 +385,9 @@ tasks.named("licenseHeaders").configure {
 }
 
 tasks.test {
+  systemProperty 'tests.security.manager', 'false'
+
+  jvmArgs += ["-javaagent:/Users/ajp/src/applandinc/appmap-java/agent/build/libs/appmap-1.18.0-SNAPSHOT.jar"]
     if (BuildParams.runtimeJavaVersion > JavaVersion.VERSION_1_8) {
         jvmArgs += ["--add-opens", "java.base/java.nio.file=ALL-UNNAMED"]
     }

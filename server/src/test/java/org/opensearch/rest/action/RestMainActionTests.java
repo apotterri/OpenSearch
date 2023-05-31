@@ -49,11 +49,14 @@ import org.opensearch.test.rest.FakeRestRequest;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.junit.Test;
+
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.greaterThan;
 
 public class RestMainActionTests extends OpenSearchTestCase {
 
+    @Test
     public void testHeadResponse() throws Exception {
         final String nodeName = "node1";
         final ClusterName clusterName = new ClusterName("cluster1");
@@ -78,6 +81,7 @@ public class RestMainActionTests extends OpenSearchTestCase {
         // not assert on them here
     }
 
+    @Test
     public void testGetResponse() throws Exception {
         final String nodeName = "node1";
         final ClusterName clusterName = new ClusterName("cluster1");
